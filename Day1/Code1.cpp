@@ -24,7 +24,7 @@ int main()
     }
     else
     cout<<"It is an special character or invalid";
-    
+     
     return 0;
     
 }
