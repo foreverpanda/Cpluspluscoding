@@ -1,0 +1,32 @@
+Node * removeDuplicates( Node *head) 
+    {
+        if(head == NULL || head->next == NULL)
+        {
+            return head;
+        }
+     // your code goes here
+     Node* curr= head;
+     while(curr!=NULL)
+     {
+         Node* prev = curr;
+         Node* temp = curr->next;
+         while(temp!=NULL)
+         {
+             if((temp->data == curr->data) )
+             {
+                 Node* nodetodelete = temp;
+                 prev->next=temp->next;
+                 temp = temp->next;
+                 delete(nodetodelete);
+             }
+             else
+             {
+                 prev = temp;
+                temp= temp->next;
+         
+             }         
+         }
+         curr= curr->next;
+     }
+     return head;
+    }
